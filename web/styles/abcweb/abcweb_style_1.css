@@ -41,7 +41,7 @@ body { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -web
 #notation { 
     overflow:auto; 
     height: 560px;
-    width: 41%;
+    width: 48%;
     border: 1px solid black; 
     float: right;
     margin-right: 10px;

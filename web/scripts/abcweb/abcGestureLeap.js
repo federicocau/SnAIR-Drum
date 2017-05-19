@@ -501,7 +501,7 @@ function readLocalFile (type, files) {
     offset_js = undefined;
     if (!$('#impbox').prop ('checked')) lpRec = undefined;  // not when we only read the timing data !!
     var freader = new FileReader ();
-    freader.onload = function (e) { readAbcOrXML (freader.result); }
+    freader.onload = function (e) { readAbcOrXML (freader.result);}
     var f = type == 'dd' ? files [0] : $('#fknp').prop ('files')[0];
     if (f) {
         scoreFnm = f.name.split ('.')[0];
@@ -1830,6 +1830,14 @@ var config = {
             console.log(filename);
             // estrapolo il json
             sheet = spartito(filename);
+        }      
+        
+        console.log('change');
+        //autoresize
+        var s = setTimeout(res, 10);
+        function res(){
+            $('#autscl').click();
+            $('#autscl').click();
         }
     });
     
