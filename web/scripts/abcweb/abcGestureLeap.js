@@ -1849,7 +1849,7 @@ var config = {
         
         console.log('change');
         //autoresize
-        var s = setTimeout(res, 10);
+        var s = setTimeout(res, 100);
         function res(){
             $('#autscl').click();
             $('#autscl').click();
