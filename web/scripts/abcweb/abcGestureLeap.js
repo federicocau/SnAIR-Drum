@@ -1508,15 +1508,15 @@ var config = {
 
     // posizione strumenti
     var figures = [
-        {name: 'crash', key: 'C#3', dimension: [104, 110, 104], position: [-110, -50, -150], coda: codaStrum[0]},
-        {name: 'crash2', key: 'C#3', dimension: [104, 110, 104], position: [0, -50, -150], coda: codaStrum[1]},
-        {name: 'ride', key: 'D#3', dimension: [104, 110, 104], position: [110, -50, -150], coda: codaStrum[2]},
-        {name: 'hitom', key: 'C3', dimension: [104, 110, 104], position: [-110, -70, -40], coda: codaStrum[3]},
-        {name: 'midtom', key: 'B2', dimension: [104, 110, 104], position: [0, -70, -40], coda: codaStrum[4]}, 
-        {name: 'floortom', key: 'A2', dimension: [104, 110, 104], position: [110, -70, -40], coda: codaStrum[5]},
-        {name: 'hat', key: 'F#2', dimension: [104, 110, 104], position: [-110, -90, 70], coda: codaStrum[6]},
-        {name: 'snare', key: 'D2', dimension: [104, 110, 104], position: [0, -90, 70], coda: codaStrum[7]},
-        {name: 'kick', key: 'B1', dimension: [104, 110, 104], position: [110, -90, 70], coda: codaStrum[8]}
+        {name: 'crash', key: 'C#3', dimension: [104, 110, 104], position: [-110, -50, -150], rotation:[0, 0, 0], coda: codaStrum[0]},
+        {name: 'crash2', key: 'C#3', dimension: [104, 110, 104], position: [0, -50, -150], rotation:[0, 0, 0], coda: codaStrum[1]},
+        {name: 'ride', key: 'D#3', dimension: [104, 110, 104], position: [110, -50, -150], rotation:[0, 0, 0], coda: codaStrum[2]},
+        {name: 'hitom', key: 'C3', dimension: [104, 110, 104], position: [-110, -70, -40], rotation:[0, 0, 0], coda: codaStrum[3]},
+        {name: 'midtom', key: 'B2', dimension: [104, 110, 104], position: [0, -70, -40], rotation:[0, 0, 0], coda: codaStrum[4]}, 
+        {name: 'floortom', key: 'A2', dimension: [104, 110, 104], position: [110, -70, -40], rotation:[0, 0, 0], coda: codaStrum[5]},
+        {name: 'hat', key: 'F#2', dimension: [104, 110, 104], position: [-110, -90, 70], rotation:[0, 0, 0], coda: codaStrum[6]},
+        {name: 'snare', key: 'D2', dimension: [104, 110, 104], position: [0, -90, 70], rotation:[0, 0, 0], coda: codaStrum[7]},
+        {name: 'kick', key: 'B1', dimension: [104, 110, 104], position: [110, -90, 70], rotation:[0, 0, 0], coda: codaStrum[8]}
     ];
 
 
@@ -1602,6 +1602,8 @@ var config = {
         controls.addEventListener('change', render);
 
         controls.handleResize();
+        // disabilita movimento camera
+        //controls.enabled = false;
 
         // world
 
@@ -1636,6 +1638,8 @@ var config = {
             cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
             // setto la posizione
             cube.position.set(figures[k].position[0], figures[k].position[1], figures[k].position[2]);
+            // setto la rotazione
+            cube.rotation.set(figures[k].rotation[0], figures[k].rotation[1], figures[k].rotation[2]); 
             // gli do il nome dello strumento
             cube.name = figures[k].name;
             // creo un bounding box sopra di esso
@@ -1737,9 +1741,10 @@ var config = {
                     // se ho caricato il brano
                    if (elmed) {
                         // se l'utente suona quando il controller non è attivo -> esecuzione errata
-                        if (elmed.currentTime > (rightTime + delta) && elmed.currentTime < (newSleep - delta))
+                        if (elmed.currentTime > (rightTime + delta) && elmed.currentTime < (newSleep - delta)){
                             console.log('%c controller in sleep', 'color: red');
-
+                            document.getElementById("sheetCheck").innerHTML = "Sbagliato";
+                        }
 
                         // creo l'item
                         var item = {name: figures[coll].key, time: elmed.currentTime.toFixed(3)};
@@ -1778,9 +1783,10 @@ var config = {
             if (playOnce2) {
                     if (elmed) {
                         // se l'utente suona quando il controller non è attivo -> esecuzione errata
-                        if (elmed.currentTime > (rightTime + delta) && elmed.currentTime < (newSleep - delta))
+                        if (elmed.currentTime > (rightTime + delta) && elmed.currentTime < (newSleep - delta)){
                             console.log('%c controller in sleep', 'color: red');
-
+                            document.getElementById("sheetCheck").innerHTML = "Sbagliato";
+                        }       
 
                         // creo l'item
                         var item = {name: figures[coll].key, time: elmed.currentTime.toFixed(3)};
@@ -1940,8 +1946,10 @@ var config = {
                             // rimuovo l'elemento dell'ultima coda (non lo faccio nel for altrimenti sforo con gli indici)
                             (code[nStrumenti - 1].queue).delete();
                             // se le code errate erano vuote o il loro tempo era errato -> ho suonato solo gli strumenti giusti
-                            if (corretto)
+                            if (corretto){
                                 console.log('%c right ', 'color: green');
+                                
+                            }
                             else
                                 console.log('%c altri strumenti errati suonati ', 'color: red');
                         }
@@ -2011,20 +2019,28 @@ var config = {
                                             }
                                     }
                                     // se nessun altro strumento è stato suonato oltre quello corretto
-                                    if (conta)
+                                    if (conta){
                                         console.log('%c right ', 'color: green');
+                                        document.getElementById("sheetCheck").innerHTML = "Giusto";
+                                    }
                                     // altrimenti esecuzione errata
-                                    else
+                                    else{
                                         console.log('%c altri strumenti errati suonati ', 'color: red');
+                                        document.getElementById("sheetCheck").innerHTML = "Sbagliato";
+                                    }
                                 }
                                 // se lo strumento è stato suonato nella tempistica errata -> esecuzione errata
-                                else
+                                else{
                                     console.log('%c tempistica errata ', 'color: red');
+                                    document.getElementById("sheetCheck").innerHTML = "Sbagliato";
+                                }
 
                             }
                             // se la coda dello strumento corretto è vuota (non è stato suonato) -> esecuzione errata
-                            else
+                            else{
                                 console.log('%c coda strumento vuota', 'color: red');
+                                document.getElementById("sheetCheck").innerHTML = "Sbagliato";
+                            }
                         }
 
                         if(i < sheet.notes.length - 1){ // nuovo if
