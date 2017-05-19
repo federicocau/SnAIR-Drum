@@ -1506,7 +1506,9 @@ var config = {
     for(n=0; n<10; n++)
         codaStrum[n] = Queue();
 
-    // posizione strumenti
+        
+    // posizione strumenti origiale
+    /*
     var figures = [
         {name: 'crash', key: 'C#3', dimension: [104, 110, 104], position: [-110, -50, -150], rotation:[0, 0, 0], coda: codaStrum[0]},
         {name: 'crash2', key: 'C#3', dimension: [104, 110, 104], position: [0, -50, -150], rotation:[0, 0, 0], coda: codaStrum[1]},
@@ -1517,7 +1519,20 @@ var config = {
         {name: 'hat', key: 'F#2', dimension: [104, 110, 104], position: [-110, -90, 70], rotation:[0, 0, 0], coda: codaStrum[6]},
         {name: 'snare', key: 'D2', dimension: [104, 110, 104], position: [0, -90, 70], rotation:[0, 0, 0], coda: codaStrum[7]},
         {name: 'kick', key: 'B1', dimension: [104, 110, 104], position: [110, -90, 70], rotation:[0, 0, 0], coda: codaStrum[8]}
-    ];
+    ];*/
+    
+    // anfiteatro
+        var figures = [
+            {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [-120, -50, -140], rotation: [0, 0.13, 0], coda: codaStrum[0]},
+            {name: 'crash2', key: 'C#3', dimension: [100.5, 110, 100.5], position: [0, -50, -150], rotation: [0, 0, 0], coda: codaStrum[1]},
+            {name: 'ride', key: 'D#3', dimension: [100.5, 110, 100.5], position: [120, -50, -140], rotation: [0, -0.13, 0], coda: codaStrum[2]},
+            {name: 'hitom', key: 'C3', dimension: [100.5, 110, 100.5], position: [-120, -70, -30], rotation: [0, 0.13, 0], coda: codaStrum[3]},
+            {name: 'midtom', key: 'B2', dimension: [100.5, 110, 100.5], position: [0, -70, -40], rotation: [0, 0, 0], coda: codaStrum[4]},
+            {name: 'floortom', key: 'A2', dimension: [100.5, 110, 100.5], position: [120, -70, -30], rotation: [0, -0.13, 0], coda: codaStrum[5]},
+            {name: 'hat', key: 'F#2', dimension: [100.5, 110, 100.5], position: [-120, -90, 80], rotation: [0, 0.13, 0], coda: codaStrum[6]},
+            {name: 'snare', key: 'D2', dimension: [100.5, 110, 100.5], position: [0, -90, 70], rotation: [0, 0, 0], coda: codaStrum[7]},
+            {name: 'kick', key: 'B1', dimension: [100.5, 110, 100.5], position: [120, -90, 80], rotation: [0, -0.13, 0], coda: codaStrum[8]}
+        ];
 
 
     init();
