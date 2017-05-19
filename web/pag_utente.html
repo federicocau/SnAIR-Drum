@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Sounjs + Abcweb</title>
+
+        <!-- css + js abcweb -->
+
+        <script src="scripts/abcweb/jquery-1.11.1.min.js"></script>
+        <script src="scripts/abcweb/abc2svg-1.js"></script>
+        <script src="scripts/abcweb/abcweb-minV1.js"></script>
+        <script src="scripts/abcweb/xml2abc-min.js"></script>
+        <link rel="stylesheet" href="styles/abcweb/abcweb_style_1.css">
+
+        <!-- css + js abcweb -->
+
+        <link rel="stylesheet" href="styles/soundjs/main.css">
+
+
+        <script src="http://code.createjs.com/soundjs-0.5.2.min.js"></script>
+        <script src="scripts/soundjs/main1.js"></script>
+    </head>
+    <body>
+
+        <!-- Inserimento abcweb -->
+
+        <div id="buttons">
+            <div style="height: 5px;"></div>
+
+            <div id="sync">
+                <div id="menu">
+                    <div id="mbar" style="padding: 4px;">Menu</div>
+                    <label id="snclbl">enable sync<input id="synbox" type="checkbox" accesskey="e"/></label>
+                    <label>speed ctrl<input id="spdctl" type="checkbox"/></label>
+                    <label>loop mode<input id="lopctl" type="checkbox"/></label>
+                    <label>file buttons<input id="btns" type="checkbox"/></label>
+                    <label id="ncrlbl">no cursor<input id="nocsr" type="checkbox"/></label>
+                    <label id="lnclbl">line cursor<input id="lncsr" type="checkbox"/></label>
+                    <label>center player<input id="ctrmed" type="checkbox"/></label>
+                    <label>center score<input id="ctrnot" type="checkbox" /></label>
+                    <label>hide player<input id="noplyr" type="checkbox"/></label>
+                    <label id="asclbl">autoscale<input id="autscl" type="checkbox"/></label>
+                    <label>skip repeats<input id="repskip" type="checkbox"/></label>
+                    <label>count in<input id="cntin" type="checkbox"/></label>
+                    <label>metronome<input id="metro" type="checkbox"/></label>
+                    <label id="helpm">help</label>
+                </div>
+                <div id="sync_out">
+                    <div id="sync_info"></div>
+                    <label>wait offset: <input id="woff" type="checkbox"/></label>
+                    <label id="implbl">import: <input id="impbox" type="checkbox"/></label>
+                    <label>jump: <input id="jump" type="checkbox"/></label>
+                    <button id="save">save</button>
+                    <label>scramble: <input id="encr" type="checkbox"/></label>
+                </div>
+            </div>
+
+
+            <div id="medbts">
+
+                <div>
+                    <span id="abclbl">score file: </span>
+                    <div id="abcfile">
+                        <input type="file" id="fknp" accept=".abc,.xml,.js" tabindex="1"/>
+                    </div>
+                </div>
+                <div id="medlbl">media file: 
+                    <div id="mediafile">
+                        <input type="file" id="mknp" accept="audio/*, video/*" tabindex="2"/>
+                    </div>
+                </div>
+
+            </div>
+            <div id="meddiv">
+                <audio id="aud" controls="controls">Your browser does not support the audio element.</audio>
+                <video id="vid" controls="controls">Your browser does not support the video element.</video>
+                <div id="vidyub"></div>
+                <div id="crediv">
+                    <div id="credits"></div>
+                    <form id="spdlbl">speed: 
+                        <input id="speed" type="number" min="0.1" step="0.05" max="4.0" title="0.1 <= float <= 4.0"/>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="streep"></div>
+        <div id="notation"></div>
+
+
+        <!-- Inserimento abcweb -->
+
+        <!--   funzionante! 
+         <div class="icon-list">
+             <img id ="hat" src="img/hat.png" width="200" height="150" alt="hat">
+             <img id ="hitom" src="img/hitom.png" width="200" height="150" alt="hitom">
+             <img id ="kick" src="img/kick.png" width="200" height="150" alt="kick">
+             <img id ="crash" src="img/crash.png" width="200" height="150" alt="crash">
+             <img id ="floortom" src="img/floortom.png" width="200" height="150" alt="floortom">
+             <img id ="snare" src="img/snare.png" width="200" height="150" alt="snare">
+             
+         </div>
+        -->       
+        <!-- inserire nome strumento e tasto corrispettivo in oggni div-->
+        <div id="area_strumenti" class="icon-list">
+            <div class="sound_image_text">             
+                <img id ="A" src="img/keys/A.png" width="43" height="43" alt="A" class="keyboards" >
+                <img id ="hat" src="img/hat.png" class="instrument_img" alt="hat">
+                <span> Hat </span>  
+            </div>
+
+            <div class="sound_image_text">
+                <img id ="S" src="img/keys/S.png" alt="S" class="keyboards">    
+                <img id ="hitom" src="img/hitom.png" class="instrument_img" alt="hitom">
+                <span> High Tom </span>
+            </div>
+
+            <div class="sound_image_text">
+                <img id ="F" src="img/keys/F.png" alt="F" class="keyboards">     
+                <img id ="kick" src="img/kick.png" class="instrument_img" alt="kick">
+                <span> Bass Drum </span>
+            </div>
+
+            <div class="sound_image_text">
+                <img id ="Z" src="img/keys/Z.png" alt="Z" class="keyboards">
+                <img id ="crash" src="img/crash.png" class="instrument_img" alt="crash">
+                <span> Crash </span>
+            </div>
+
+            <div class="sound_image_text">
+                <img id ="X" src="img/keys/X.png" alt="X" class="keyboards">
+                <img id ="floortom" src="img/floortom.png" class="instrument_img" alt="floortom">
+                <span> Floor Tom </span>
+            </div>
+
+            <div class="sound_image_text">
+                <img id ="C" src="img/keys/C.png" alt="C" class="keyboards">
+                <img id ="snare" src="img/snare.png" class="instrument_img" alt="snare">
+                <span> Snare Drum </span>
+            </div>
+
+
+        </div>
+        <div class="volume-wrapper">
+            <div class="volume-text">Volume strumenti</div>
+            <input type="range" id="volume" min="0" onchange="changeVolume(this.value)" max="1" step="0.1" value="0.5">
+        </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,315 @@
+{
+  "header": {
+    "PPQ": 480,
+    "timeSignature": [
+      4,
+      4
+    ],
+    "bpm": 80
+  },
+  "startTime": 0,
+  "duration": 26.9984375,
+  "tracks": [
+    {
+      "startTime": 0,
+      "duration": 26.9984375,
+      "length": 36,
+      "id": 0,
+      "instrumentNumber": 9,
+      "instrumentFamily": "drums",
+      "channelNumber": 9,
+      "isPercussion": true,
+      "notes": [
+        {
+          "name": "C#2",
+          "midi": 37,
+          "time": 0,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375
+        },
+        {
+          "name": "C#2",
+          "midi": 37,
+          "time": 0.75,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000001
+        },
+        {
+          "name": "C#2",
+          "midi": 37,
+          "time": 1.5,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000001
+        },
+        {
+          "name": "C#2",
+          "midi": 37,
+          "time": 2.25,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000001
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 3,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984374999999996
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 3,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984374999999996
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 4.5,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984374999999996
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 6,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984374999999996
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 6,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984374999999996
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 7.5,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984374999999996
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 9,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484374999999996
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 9,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484374999999996
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 9.75,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484374999999996
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 9.75,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484374999999996
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 10.5,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484374999999996
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 10.5,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484374999999996
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 11.25,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484374999999996
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 11.25,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484374999999996
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 12,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984374999999996
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 12,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984374999999996
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 13.5,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984374999999996
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 15,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984375000000014
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 15,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984375000000014
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 16.5,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984375000000014
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 18,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000014
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 18,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000014
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 18.75,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000014
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 18.75,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000014
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 19.5,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000014
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 19.5,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000014
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 20.25,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000014
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 20.25,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7484375000000014
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 21,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984375000000014
+        },
+        {
+          "name": "E2",
+          "midi": 40,
+          "time": 22.5,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984375000000014
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 24,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984375000000014
+        },
+        {
+          "name": "C2",
+          "midi": 36,
+          "time": 25.5,
+          "velocity": 0.6299212598425197,
+          "duration": 1.4984375000000014
+        }
+      ],
+      "controlChanges": {
+        "7": [
+          {
+            "number": 7,
+            "time": 0,
+            "value": 0.7874015748031497
+          }
+        ],
+        "10": [
+          {
+            "number": 10,
+            "time": 0,
+            "value": 0.5039370078740157
+          }
+        ],
+        "91": [
+          {
+            "number": 91,
+            "time": 0,
+            "value": 0
+          }
+        ],
+        "93": [
+          {
+            "number": 93,
+            "time": 0,
+            "value": 0
+          }
+        ],
+        "121": [
+          {
+            "number": 121,
+            "time": 0,
+            "value": 0
+          }
+        ]
+      }
+    }
+  ]
+}

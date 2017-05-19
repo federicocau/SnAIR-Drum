@@ -1,0 +1,148 @@
+{
+  "header": {
+    "PPQ": 480,
+    "timeSignature": [
+      4,
+      4
+    ],
+    "bpm": 75
+  },
+  "startTime": 0,
+  "duration": 19.99833333333333,
+  "tracks": [
+    {
+      "startTime": 0,
+      "duration": 19.99833333333333,
+      "length": 12,
+      "id": 0,
+      "instrumentNumber": 0,
+      "instrument": "standard kit",
+      "instrumentFamily": "drums",
+      "channelNumber": 9,
+      "isPercussion": true,
+      "notes": [
+        {
+          "name": "C#2",
+          "midi": 37,
+          "time": 0,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7983333333333333
+        },
+        {
+          "name": "C#2",
+          "midi": 37,
+          "time": 0.8,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7983333333333333
+        },
+        {
+          "name": "C#2",
+          "midi": 37,
+          "time": 1.6,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7983333333333333
+        },
+        {
+          "name": "C#2",
+          "midi": 37,
+          "time": 2.4,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7983333333333333
+        },
+        {
+          "name": "B2",
+          "midi": 47,
+          "time": 3.1999999999999997,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7983333333333333
+        },
+        {
+          "name": "D#3",
+          "midi": 51,
+          "time": 3.9999999999999996,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7983333333333333
+        },
+        {
+          "name": "E3",
+          "midi": 52,
+          "time": 4.8,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7983333333333329
+        },
+        {
+          "name": "G3",
+          "midi": 55,
+          "time": 5.6,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7983333333333338
+        },
+        {
+          "name": "D2",
+          "midi": 38,
+          "time": 9.6,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7983333333333338
+        },
+        {
+          "name": "D2",
+          "midi": 38,
+          "time": 12.8,
+          "velocity": 0.6299212598425197,
+          "duration": 0.7983333333333338
+        },
+        {
+          "name": "C3",
+          "midi": 48,
+          "time": 16,
+          "velocity": 0.6299212598425197,
+          "duration": 0.798333333333332
+        },
+        {
+          "name": "B2",
+          "midi": 47,
+          "time": 19.2,
+          "velocity": 0.6299212598425197,
+          "duration": 0.798333333333332
+        }
+      ],
+      "controlChanges": {
+        "7": [
+          {
+            "number": 7,
+            "time": 0,
+            "value": 0.7874015748031497
+          }
+        ],
+        "10": [
+          {
+            "number": 10,
+            "time": 0,
+            "value": 0.5039370078740157
+          }
+        ],
+        "91": [
+          {
+            "number": 91,
+            "time": 0,
+            "value": 0
+          }
+        ],
+        "93": [
+          {
+            "number": 93,
+            "time": 0,
+            "value": 0
+          }
+        ],
+        "121": [
+          {
+            "number": 121,
+            "time": 0,
+            "value": 0
+          }
+        ]
+      }
+    }
+  ]
+}
