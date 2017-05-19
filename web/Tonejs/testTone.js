@@ -23,7 +23,7 @@ function spartitoTamburo(){
     return notes;
 }*/
 
-// funziona ma 'false' è deprecato!!!! 
+// funziona ma 'false' è deprecato!!!!        
 function spartito(filename){
     xmlhttp=new XMLHttpRequest();
     //xmlhttp.open("GET","Tonejs/testTone.json",false);
