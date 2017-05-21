@@ -1533,7 +1533,20 @@ var config = {
             {name: 'snare', key: 'D2', dimension: [100.5, 110, 100.5], position: [0, -90, 70], rotation: [0, 0, 0], coda: codaStrum[7]},
             {name: 'kick', key: 'B1', dimension: [100.5, 110, 100.5], position: [120, -90, 80], rotation: [0, -0.13, 0], coda: codaStrum[8]}
         ];
-
+        
+        // nomi strumenti
+        var names = [
+            {text: 'crash', x: 26, y: 225},
+            {text: 'crash', x: 26, y: 225},
+            {text: 'ride', x: 50, y: 225},
+            {text: 'tom1', x: 29, y: 225},
+            {text: 'tom2', x: 29, y: 225},
+            {text: 'tom3', x: 29, y: 225},
+            {text: 'hi-hat', x: 12, y: 225},
+            {text: 'snare', x: 22, y: 225},
+            {text: 'kick', x: 45, y: 225}       
+        ];
+        
 
     init();
     animate();
@@ -1645,12 +1658,29 @@ var config = {
         container.appendChild(renderer.domElement);
 
         for (k = 0; k < figures.length; k++) {
+            
+            // nomi kit
+            var dynamicTexture	= new THREEx.DynamicTexture(256,256)
+            dynamicTexture.context.font	= "bolder 70px Verdana";
+            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, 'black');  
+            // geometria piano (altezza zero)
+            var planeGeometry = new THREE.CubeGeometry(figures[k].dimension[0], 0, figures[k].dimension[2]);
+            // materiale cubo
+            var planeMaterial = new THREE.MeshLambertMaterial({map : dynamicTexture.texture,wireframe: false, color: 0xffffff, transparent: true, opacity: 4});   
+            plane = new THREE.Mesh(planeGeometry, planeMaterial);
+            // lo avvicino alla superficie y+ del cubo
+            plane.position.set(figures[k].position[0], figures[k].position[1]+60, figures[k].position[2]);
+            plane.rotation.set(figures[k].rotation[0], figures[k].rotation[1], figures[k].rotation[2]);
+            scene.add(plane);
+                
+
             // geometria cubo
             var cubeGeometry = new THREE.CubeGeometry(figures[k].dimension[0], figures[k].dimension[1], figures[k].dimension[2]);
             // materiale cubo
             var cubeMaterial = new THREE.MeshLambertMaterial({wireframe: false, color: 0xff0000, transparent: true, opacity: 0.7});
+  
             // creo la mesh
-            cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+            cube = new THREE.Mesh(cubeGeometry, cubeMaterial);         
             // setto la posizione
             cube.position.set(figures[k].position[0], figures[k].position[1], figures[k].position[2]);
             // setto la rotazione
@@ -1686,6 +1716,7 @@ var config = {
 //        record = function(hand) {
 //            hand.indexFinger.bones[3].nextJoint[2] < 0;
 //        };
+    
         render();
 
     }
