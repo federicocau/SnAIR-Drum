@@ -1521,30 +1521,43 @@ var config = {
         {name: 'kick', key: 'B1', dimension: [104, 110, 104], position: [110, -90, 70], rotation:[0, 0, 0], coda: codaStrum[8]}
     ];*/
     
-    // anfiteatro
+    // anfiteatro cubi
         var figures = [
-            {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [-120, -50, -140], rotation: [0, 0.13, 0], coda: codaStrum[0]},
-            {name: 'crash2', key: 'C#3', dimension: [100.5, 110, 100.5], position: [0, -50, -150], rotation: [0, 0, 0], coda: codaStrum[1]},
-            {name: 'ride', key: 'D#3', dimension: [100.5, 110, 100.5], position: [120, -50, -140], rotation: [0, -0.13, 0], coda: codaStrum[2]},
-            {name: 'hitom', key: 'C3', dimension: [100.5, 110, 100.5], position: [-120, -70, -30], rotation: [0, 0.13, 0], coda: codaStrum[3]},
-            {name: 'midtom', key: 'B2', dimension: [100.5, 110, 100.5], position: [0, -70, -40], rotation: [0, 0, 0], coda: codaStrum[4]},
-            {name: 'floortom', key: 'A2', dimension: [100.5, 110, 100.5], position: [120, -70, -30], rotation: [0, -0.13, 0], coda: codaStrum[5]},
-            {name: 'hat', key: 'F#2', dimension: [100.5, 110, 100.5], position: [-120, -90, 80], rotation: [0, 0.13, 0], coda: codaStrum[6]},
-            {name: 'snare', key: 'D2', dimension: [100.5, 110, 100.5], position: [0, -90, 70], rotation: [0, 0, 0], coda: codaStrum[7]},
-            {name: 'kick', key: 'B1', dimension: [100.5, 110, 100.5], position: [120, -90, 80], rotation: [0, -0.13, 0], coda: codaStrum[8]}
+            {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [-130, -50, -145], rotation: [0, 0.13, 0], coda: codaStrum[0]},
+            {name: 'crash2', key: 'C#3', dimension: [100.5, 110, 100.5], position: [0, -50, -155], rotation: [0, 0, 0], coda: codaStrum[1]},
+            {name: 'ride', key: 'D#3', dimension: [100.5, 110, 100.5], position: [130, -50, -145], rotation: [0, -0.13, 0], coda: codaStrum[2]},
+            {name: 'hitom', key: 'C3', dimension: [100.5, 110, 100.5], position: [-125, -70, -35], rotation: [0, 0.13, 0], coda: codaStrum[3]},
+            {name: 'midtom', key: 'B2', dimension: [100.5, 110, 100.5], position: [0, -70, -45], rotation: [0, 0, 0], coda: codaStrum[4]},
+            {name: 'floortom', key: 'A2', dimension: [100.5, 110, 100.5], position: [125, -70, -35], rotation: [0, -0.13, 0], coda: codaStrum[5]},
+            {name: 'hat', key: 'F#2', dimension: [100.5, 110, 100.5], position: [-120, -90, 75], rotation: [0, 0.13, 0], coda: codaStrum[6]},
+            {name: 'snare', key: 'D2', dimension: [100.5, 110, 100.5], position: [0, -90, 65], rotation: [0, 0, 0], coda: codaStrum[7]},
+            {name: 'kick', key: 'B1', dimension: [100.5, 110, 100.5], position: [120, -90, 75], rotation: [0, -0.13, 0], coda: codaStrum[8]}
         ];
         
         // nomi strumenti
         var names = [
-            {text: 'crash', x: 26, y: 225},
-            {text: 'crash', x: 26, y: 225},
-            {text: 'ride', x: 50, y: 225},
-            {text: 'tom1', x: 29, y: 225},
-            {text: 'tom2', x: 29, y: 225},
-            {text: 'tom3', x: 29, y: 225},
-            {text: 'hi-hat', x: 12, y: 225},
-            {text: 'snare', x: 22, y: 225},
-            {text: 'kick', x: 45, y: 225}       
+            {text: 'crash', x: 87, y: 355},
+            {text: 'crash', x: 87, y: 355},
+            {text: 'ride', x: 115, y: 355},
+            {text: 'tom1', x: 89, y: 355},
+            {text: 'tom2', x: 89, y: 355},
+            {text: 'tom3', x: 89, y: 355},
+            {text: 'hi-hat', x: 72, y: 355},
+            {text: 'snare', x: 82, y: 355},
+            {text: 'kick', x: 105, y: 355}       
+        ];
+        
+        // strumenti
+        var models = [
+            {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [-130, -50, -140], rotation: [0, 0.13, 0]},
+            {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [0, -50, -150], rotation: [0, 0, 0]},
+            {name: 'crash', key: 'D#3', dimension: [100.5, 110, 100.5], position: [130, -50, -140], rotation: [0, -0.13, 0]},
+            {name: 'tomOk', key: 'C3', dimension: [100.5, 110, 100.5], position: [-130, -70, -30], rotation: [0, 0.13, 0]},
+            {name: 'tomOk', key: 'B2', dimension: [100.5, 110, 100.5], position: [0, -70, -40], rotation: [0, 0, 0]},
+            {name: 'tomOk', key: 'A2', dimension: [100.5, 110, 100.5], position: [130, -70, -30], rotation: [0, -0.13, 0]},
+            {name: 'hat', key: 'F#2', dimension: [100.5, 110, 100.5], position: [-120, -90, 80], rotation: [0, 0.13, 0]},
+            {name: 'snare', key: 'D2', dimension: [100.5, 110, 100.5], position: [0, -90, 70], rotation: [0, 0, 0]},
+            {name: 'kick', key: 'B1', dimension: [100.5, 110, 100.5], position: [120, -90, 80], rotation: [0, -0.13, 0]}  
         ];
         
 
@@ -1656,17 +1669,120 @@ var config = {
 
         container = document.getElementById('container');
         container.appendChild(renderer.domElement);
+        
+ 
+ /* test collada loaders (brutto) */
+            //crash1
+            var loader = new THREE.ColladaLoader();
+            loader.options.convertUpAxis = true;
+            loader.load('models/' + models[0].name + '.DAE', function (collada) {
+                var object = collada.scene;
+                object.scale.set(5.7, 5.7, 5.7);
+                object.position.set(models[0].position[0], models[0].position[1] + 50, models[0].position[2]);
+                scene.add(object);
+                render();
+            });   
+            //crash2
+                        var loader = new THREE.ColladaLoader();
+            loader.options.convertUpAxis = true;
+            loader.load('models/' + models[1].name + '.DAE', function (collada) {
+                var object = collada.scene;
+                object.scale.set(5.7, 5.7, 5.7);
+                object.position.set(models[1].position[0], models[1].position[1] + 50, models[1].position[2]);
+                scene.add(object);
+                render();
+            });  
+            //ride
+                        var loader = new THREE.ColladaLoader();
+            loader.options.convertUpAxis = true;
+            loader.load('models/' + models[2].name + '.DAE', function (collada) {
+                var object = collada.scene;
+                object.scale.set(6.3, 6.3, 6.3);
+                object.position.set(models[2].position[0], models[2].position[1] + 50, models[2].position[2]);
+                scene.add(object);
+                render();
+            });  
+            /* problema */
+            //tom1
+                        var loader = new THREE.ColladaLoader();
+            loader.options.convertUpAxis = true;
+            loader.load('models/' + models[3].name + '.DAE', function (collada) {
+                var object = collada.scene;
+                object.scale.set(4.3, 4.3, 4.3);
+                object.position.set(models[3].position[0], models[3].position[1] + 24, models[3].position[2]);
+                scene.add(object);
+                render();
+            });
+            //tom2
+                        var loader = new THREE.ColladaLoader();
+            loader.options.convertUpAxis = true;
+            loader.load('models/' + models[4].name + '.DAE', function (collada) {
+                var object = collada.scene;
+                object.scale.set(4.8, 4.8, 4.8);
+                object.position.set(models[4].position[0], models[4].position[1] + 20, models[4].position[2]);
+                scene.add(object);
+                render();
+            });
+            //tom3
+                        var loader = new THREE.ColladaLoader();
+            loader.options.convertUpAxis = true;
+            loader.load('models/' + models[5].name + '.DAE', function (collada) {
+                var object = collada.scene;
+                object.scale.set(5.3, 5.3, 5.3);
+                object.position.set(models[5].position[0], models[5].position[1] + 16, models[5].position[2]);
+                scene.add(object);
+                render();
+            });
+            //hihat
+                        var loader = new THREE.ColladaLoader();
+            loader.options.convertUpAxis = true;
+            loader.load('models/' + models[6].name + '.DAE', function (collada) {
+                var object = collada.scene;
+                object.scale.set(3, 3, 3);
+                object.position.set(models[6].position[0], models[6].position[1] + 64, models[6].position[2]);
+                scene.add(object);
+                render();
+            });
 
+            //snare
+                        var loader = new THREE.ColladaLoader();
+            loader.options.convertUpAxis = true;
+            loader.load('models/' + models[7].name + '.DAE', function (collada) {
+                var object = collada.scene;
+                object.scale.set(4.9, 4.9, 4.9);
+                object.position.set(models[7].position[0], models[7].position[1] + 20, models[7].position[2]);
+                object.rotation.set(-0.2,0,0);
+                scene.add(object);
+                render();
+            });
+            
+            //kick
+                        var loader = new THREE.ColladaLoader();
+            loader.options.convertUpAxis = true;
+            loader.load('models/' + models[8].name + '.DAE', function (collada) {
+                var object = collada.scene;
+                object.scale.set(3.7, 3.7, 3.7);
+                object.position.set(models[8].position[0], models[8].position[1] + 20, models[8].position[2]+45);
+                object.rotation.set(29.755,0,0);
+                scene.add(object);
+                render();
+            });
+        
         for (k = 0; k < figures.length; k++) {
             
             // nomi kit
-            var dynamicTexture	= new THREEx.DynamicTexture(256,256)
+            /*
+            var dynamicTexture	= new THREEx.DynamicTexture(400,400)
             dynamicTexture.context.font	= "bolder 70px Verdana";
-            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, 'black');  
+            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, 'black'); */
+            var dynamicTexture	= new THREEx.DynamicTexture(400,400)
+            dynamicTexture.context.font	= "bolder 70px Verdana";
+            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, '');
+            
             // geometria piano (altezza zero)
             var planeGeometry = new THREE.CubeGeometry(figures[k].dimension[0], 0, figures[k].dimension[2]);
             // materiale cubo
-            var planeMaterial = new THREE.MeshLambertMaterial({map : dynamicTexture.texture,wireframe: false, color: 0xffffff, transparent: true, opacity: 4});   
+            var planeMaterial = new THREE.MeshLambertMaterial({map : dynamicTexture.texture,wireframe: false, color: 0xffffff, transparent: true, opacity: 3});   
             plane = new THREE.Mesh(planeGeometry, planeMaterial);
             // lo avvicino alla superficie y+ del cubo
             plane.position.set(figures[k].position[0], figures[k].position[1]+60, figures[k].position[2]);
@@ -1677,7 +1793,7 @@ var config = {
             // geometria cubo
             var cubeGeometry = new THREE.CubeGeometry(figures[k].dimension[0], figures[k].dimension[1], figures[k].dimension[2]);
             // materiale cubo
-            var cubeMaterial = new THREE.MeshLambertMaterial({wireframe: false, color: 0xff0000, transparent: true, opacity: 0.7});
+            var cubeMaterial = new THREE.MeshLambertMaterial({wireframe: false, color: 0xff0000, transparent: true, opacity: 0.2});
   
             // creo la mesh
             cube = new THREE.Mesh(cubeGeometry, cubeMaterial);         
@@ -1717,6 +1833,7 @@ var config = {
 //            hand.indexFinger.bones[3].nextJoint[2] < 0;
 //        };
     
+        
         render();
 
     }
