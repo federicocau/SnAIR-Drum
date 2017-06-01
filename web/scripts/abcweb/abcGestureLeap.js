@@ -1777,12 +1777,12 @@ var config = {
             dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, 'black'); */
             var dynamicTexture	= new THREEx.DynamicTexture(400,400)
             dynamicTexture.context.font	= "bolder 70px Verdana";
-            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, '');
+            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, 'white');
             
             // geometria piano (altezza zero)
-            var planeGeometry = new THREE.CubeGeometry(figures[k].dimension[0], 0, figures[k].dimension[2]);
+            var planeGeometry = new THREE.CubeGeometry(figures[k].dimension[0], 1, figures[k].dimension[2]);
             // materiale cubo
-            var planeMaterial = new THREE.MeshLambertMaterial({map : dynamicTexture.texture,wireframe: false, color: 0xffffff, transparent: true, opacity: 3});   
+            var planeMaterial = new THREE.MeshLambertMaterial({map : dynamicTexture.texture, wireframe: false, color: 0xffffff, transparent: true, opacity: 3});   
             plane = new THREE.Mesh(planeGeometry, planeMaterial);
             // lo avvicino alla superficie y+ del cubo
             plane.position.set(figures[k].position[0], figures[k].position[1]+60, figures[k].position[2]);
