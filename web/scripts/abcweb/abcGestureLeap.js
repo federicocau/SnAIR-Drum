@@ -1749,8 +1749,8 @@ var config = {
             loader.options.convertUpAxis = true;
             loader.load('models/' + models[7].name + '.DAE', function (collada) {
                 var object = collada.scene;
-                object.scale.set(4.9, 4.9, 4.9);
-                object.position.set(models[7].position[0], models[7].position[1] + 20, models[7].position[2]);
+                object.scale.set(5.4, 5.4, 5.4);
+                object.position.set(models[7].position[0], models[7].position[1] + 10, models[7].position[2]);
                 object.rotation.set(-0.2,0,0);
                 scene.add(object);
                 render();
@@ -1771,16 +1771,12 @@ var config = {
         for (k = 0; k < figures.length; k++) {
             
             // nomi kit
-            /*
             var dynamicTexture	= new THREEx.DynamicTexture(400,400)
             dynamicTexture.context.font	= "bolder 70px Verdana";
-            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, 'black'); */
-            var dynamicTexture	= new THREEx.DynamicTexture(400,400)
-            dynamicTexture.context.font	= "bolder 70px Verdana";
-            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, 'white');
+            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, 'grey');
             
             // geometria piano (altezza zero)
-            var planeGeometry = new THREE.CubeGeometry(figures[k].dimension[0], 1, figures[k].dimension[2]);
+            var planeGeometry = new THREE.CubeGeometry(figures[k].dimension[0], 0.2, figures[k].dimension[2]);
             // materiale cubo
             var planeMaterial = new THREE.MeshLambertMaterial({map : dynamicTexture.texture, wireframe: false, color: 0xffffff, transparent: true, opacity: 3});   
             plane = new THREE.Mesh(planeGeometry, planeMaterial);
