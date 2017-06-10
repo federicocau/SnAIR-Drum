@@ -2240,7 +2240,6 @@ var config = {
         
         document.getElementById('aud').addEventListener('pause', function () {
             clearTimeout(count); // fermo le chiamate al controller
-            clearTimeout(count); // fermo le chiamate al controller
             console.log("Sheet end!");
             if(i >= sheet.notes.length -1){
                 newSleep = 0;

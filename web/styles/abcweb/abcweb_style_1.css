@@ -8,6 +8,7 @@ and open the template in the editor.
     Author     : Admin
 */
 
+
 ul        { margin: 0px; }
 label     { display: block; }
 input     { vertical-align: middle; }
@@ -40,9 +41,9 @@ body { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -web
 /* css spartito */
 #notation { 
     overflow:auto; 
-    height: 560px;
-    width: 48%;
-    border: 1px solid black; 
+    height: 50%;
+    width: 49%;
+    /*border: 1px solid black; */
     float: right;
     margin-right: 10px;
 }
@@ -77,3 +78,58 @@ body { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -web
 .noheight { height: 0px !important; }
 .indrag   { background: #aaa; }
 .abcimp   { color: red; }
+
+
+/* custom bootstrap */
+
+/*
+.navbar, .navbar-inverse {
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    min-height: 80px;
+}
+
+.nav li {
+    display: inline;
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+    font-family: Lato;
+    font-size: 1.7em;
+    font-weight: 300;
+    padding: 30px 25px 33px 25px;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+    background-color: #444444;
+    transition: 0.7s all linear;
+    height: 100%;
+}*/
+
+.dropdown{
+    margin-left: 1%;
+}
+
+.dropdown-menu li{
+    margin-left: 10px;
+}
+
+/* scena 3D */
+#container{
+    width: 49%; /*680*/
+    height: 560px;
+    margin-top: 10px;
+    /*border: 1px solid red;*/
+    margin-left: 10px;
+}
+
+#sheetCheck{
+    margin-left: 73%; 
+    margin-top: -20px;
+    position: absolute;
+    border: 1px solid red;
+}
+/* scena 3D */
