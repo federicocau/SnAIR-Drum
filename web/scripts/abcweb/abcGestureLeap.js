@@ -659,7 +659,7 @@ function setNotationHeight () {
     var b = parseFloat ($('body').css ('height'));
     var e = chk ? parseFloat ($('#err').css ('height')) : 0;
     var x = 100 - (100 * (h + e) / b).toFixed ();
-    $('#notation').css ('height', x + '%');   // fill all space below media
+    //$('#notation').css ('height', x + '%');   // fill all space below media
     $('#vidyub').css ('width', (h * 0.95 * 1.6).toFixed ());   // youtube player needs width, aspect 1.6
     centerPlayer ();
 };
