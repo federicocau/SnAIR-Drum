@@ -51,7 +51,39 @@
         <!-- Bootstrap -->
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
-        <script src="bootstrap/js/bootstrap.min.js"></script>     
+        <script src="bootstrap/js/bootstrap.min.js"></script>    
+        
+        <script> 
+        window.pressed = function(num){
+        if(num ===1 ){
+            var a = document.getElementById('fknp');
+            if(a.value == "")
+            {
+                fileLabel.innerHTML = "No file selected";
+            }
+            else
+            {
+                var theSplit = a.value.split('\\');
+                fileLabel.innerHTML = theSplit[theSplit.length-1];
+            }
+        }
+        else{
+            var a = document.getElementById('mknp');
+            if(a.value == "")
+            {
+                fileLabel2.innerHTML = "No file selected";
+            }
+            else
+            {
+                var theSplit = a.value.split('\\');
+                fileLabel2.innerHTML = theSplit[theSplit.length-1];
+            }
+            
+        }
+};
+        
+        </script>
+        
     </head>
     <body>
 
@@ -119,14 +151,17 @@
                             <div>
                                 <span id="abclbl">score file: </span>
                                 <div id="abcfile">
-                                    <input type="file" id="fknp" accept=".abc,.xml,.js" tabindex="1"/>
+                                    <input type="file" id="fknp" accept=".abc,.xml,.js" tabindex="1" onchange="pressed(1)"/>
+                                    <label id="fileLabel">No file selected</label>
                                 </div>
                             </div>
+                            
                         </li>
                         <li>
                             <div id="medlbl">media file: 
                                 <div id="mediafile">
-                                    <input type="file" id="mknp" accept="audio/*, video/*" tabindex="2"/>
+                                    <input type="file" id="mknp" accept="audio/*, video/*" tabindex="2" onchange="pressed(2)"/>
+                                    <label id="fileLabel2">No file selected</label>
                                 </div>
                             </div>
                         </li>
@@ -134,6 +169,7 @@
                 </div>
                 
             </div>
+            
             
                             <div id="snairdrum">
                     SnAIR Drum

@@ -1324,16 +1324,18 @@ function webSokOpen (ip) {
     }
 }
 
+/* row resize col mouse (disabilitato) */
 function msc_shift (evt) {
     if (hideMenuHelp ()) return;
     if (evt.target.id != 'meddiv') return;
-    $('#buttons').css ('opacity','0.5');
+    /*$('#buttons').css ('opacity','0.5');
     $('#streep').css ('opacity','1.0');
     var touchDev = evt.type == 'touchstart';
     var doel = $('#meddiv');
     var y1 = touchDev ? evt.originalEvent.touches[0].clientY : evt.pageY;
     var bh = $('#buttons').height ();
     doel.css ('cursor', 'row-resize')
+    
     doel.on ('mousemove touchmove', function (evt) {
         var h = $('body').height ();
         var y2 = touchDev ? evt.originalEvent.touches[0].clientY : evt.pageY;
@@ -1348,7 +1350,7 @@ function msc_shift (evt) {
         doel.off ('mousemove touchmove mouseup touchend');
         doel.css ('cursor', 'initial')
         setNotationHeight ();
-    });
+    });*/
 }
 
 function setSpeed (inc) {
