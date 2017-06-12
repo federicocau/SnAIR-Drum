@@ -80,7 +80,11 @@
             }
             
         }
-};
+    };
+    
+    $(document).on('click', '#medbts .btn-group', function (e) {
+        e.stopPropagation();
+    });
         
         </script>
         
@@ -92,20 +96,7 @@
         <div id="buttons">
             <div style="height: 5px;"></div>
             <div id="sync">
-                
-                <div id="menu">
-                    <div id="mbar" style="padding: 4px;">Settings</div>
-                    <!--<label id="snclbl">Attiva sync<input id="synbox" type="checkbox" accesskey="e"/></label>-->
-                    <label>Velocità<input id="spdctl" type="checkbox"/></label>
-                    <!--<label>Abilita upload file<input id="btns" type="checkbox"/></label>-->
-                    <label id="ncrlbl">Disabilita cursore<input id="nocsr" type="checkbox"/></label>
-                    <label id="lnclbl">Abilita cursore<input id="lncsr" type="checkbox"/></label>
-                    <label>Centra player<input id="ctrmed" type="checkbox"/></label>
-                    <label>Centra spartito<input id="ctrnot" type="checkbox" /></label>
-                    <!--<label>Nascondi player<input id="noplyr" type="checkbox"/></label>-->
-                    <label id="asclbl">Ridimensiona spartito<input id="autscl" type="checkbox"/></label>
-                    <label>Metronomo<input id="metro" type="checkbox"/></label>
-                </div>
+                           
                 <div id="sync_out">
                     <div id="sync_info"></div>
                     <label>wait offset: <input id="woff" type="checkbox"/></label>
@@ -144,8 +135,12 @@
                 <label id="yublbl">use youtube:<input id="yubuse" type="checkbox" tabindex="4"/></label>
                 -->
                                 <!-- hamburger menu' -->
-                <div class="dropdown">
-                    <a data-target="#" href="page.html" data-toggle="dropdown" class="dropdown-toggle">Upload files</a>
+                <!--<div class="dropdown">-->
+                <div class="btn-group">
+                    <!--<a data-target="#" href="page.html" data-toggle="dropdown" class="dropdown-toggle">Menu'</a>-->
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Menu <span class="caret"></span>
+                </button>
                     <ul class="dropdown-menu">
                         <li>
                             <div>
@@ -165,9 +160,26 @@
                                 </div>
                             </div>
                         </li>
+                        
+                        <li>
+                            
+                        </li>
+                        <div id="menu">
+                    <div id="mbar" style="padding: 4px;">Settings</div>
+                    <!--<label id="snclbl">Attiva sync<input id="synbox" type="checkbox" accesskey="e"/></label>-->
+                    <label>Velocità<input id="spdctl" type="checkbox"/></label>
+                    <!--<label>Abilita upload file<input id="btns" type="checkbox"/></label>-->
+                    <label id="ncrlbl">Disabilita cursore<input id="nocsr" type="checkbox"/></label>
+                    <label id="lnclbl">Abilita cursore<input id="lncsr" type="checkbox"/></label>
+                    <label>Centra player<input id="ctrmed" type="checkbox"/></label>
+                    <!--<label>Centra spartito<input id="ctrnot" type="checkbox" /></label>-->
+                    <!--<label>Nascondi player<input id="noplyr" type="checkbox"/></label>-->
+                    <label id="asclbl">Ridimensiona spartito<input id="autscl" type="checkbox"/></label>
+                    <label>Metronomo<input id="metro" type="checkbox"/></label>
+                </div>
                     </ul>   
                 </div>
-                
+             
             </div>
             
             
