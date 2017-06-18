@@ -1412,9 +1412,11 @@ function checkMenu (evt) {
     }
 }
 
+/*
 function hideMenu () {
     $('#menu label').css ('display', 'none');
 }
+     */                           
 function hideMenuHelp () {          // called from click event dispatcher -> the change event could come later
     var b = $('#menu label').css ('display') != 'none' || $('#help').hasClass ('showhlp');
     if (b) {
@@ -1450,7 +1452,7 @@ $(document).ready (function () {
     $('#jump').change (checkMenu);
     $('#impbox').change (toggleScoreBtn);
     $('#menu * input').change (checkMenu);      // for all menu checkboxes
-    $('#menu label').toggle ();                 // hide all menu items
+    //$('#menu label').toggle ();                 // hide all menu items
     $('#mbar').click (function () {
         if ($('#menu label').css ('display') == 'none') $('#menu label').toggle (true);
         else hideMenu ();
@@ -1576,7 +1578,7 @@ var config = {
             // prendo la posizione dell'estremità delle dita (un indice) -> sinistro
             tip1 = frame.pointables[1].tipPosition;
             // converto in un vettore
-            tip1 = new THREE.Vector3(tip1[0], (tip1[1] - 202), tip1[2]);
+            tip1 = new THREE.Vector3(tip1[0], (tip1[1] - 210), tip1[2]);
             // controllo la collisione
             collision(tip1);
 
@@ -1585,7 +1587,7 @@ var config = {
                 // prendo anche l'altro indice -> destro
                 tip2 = frame.pointables[6].tipPosition;
                 // converto in un vettore
-                tip2 = new THREE.Vector3(tip2[0], (tip2[1] - 202), tip2[2]);
+                tip2 = new THREE.Vector3(tip2[0], (tip2[1] - 210), tip2[2]);
                 // controllo la collisione
                 collision2(tip2);
             }
@@ -1654,8 +1656,8 @@ var config = {
         scene.fog = new THREE.FogExp2(0xffffff);
 
         // axis helper
-        var axisHelper = new THREE.AxisHelper(100);
-        scene.add(axisHelper);
+        /*var axisHelper = new THREE.AxisHelper(100);
+        scene.add(axisHelper);*/
 
         // lights
 
@@ -1699,7 +1701,7 @@ var config = {
             loader.options.convertUpAxis = true;
             loader.load('models/' + models[2].name + '.DAE', function (collada) {
                 var object = collada.scene;
-                object.scale.set(6.3, 6.3, 6.3);
+                object.scale.set(6, 6, 6);
                 object.position.set(models[2].position[0], models[2].position[1] + 50, models[2].position[2]);
                 scene.add(object);
                 render();
@@ -1775,7 +1777,7 @@ var config = {
             // nomi kit
             var dynamicTexture	= new THREEx.DynamicTexture(400,400)
             dynamicTexture.context.font	= "bolder 70px Verdana";
-            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, 'grey');
+            dynamicTexture.drawText(names[k].text, names[k].x, names[k].y, 'white');
             
             // geometria piano (altezza zero)
             var planeGeometry = new THREE.CubeGeometry(figures[k].dimension[0], 0.2, figures[k].dimension[2]);
@@ -1918,7 +1920,7 @@ var config = {
                     }
                 // se il box è uguale al colore di default
                 if (cubes[coll].material.color.getHex() === colore.color.getHex())
-                    cubes[coll].material.color.setHex(0xffff00);
+                    cubes[coll].material.color.setHex(0x0000ff);
                 // indice per ricambiare il colore on release
                 colore.index = coll;
                 // mentre il box è 'premuto' non deve più suonare
@@ -1960,7 +1962,7 @@ var config = {
                     }
                 // cambio il colore on touch
                 if (cubes[coll].material.color.getHex() === colore2.color.getHex())
-                    cubes[coll].material.color.setHex(0xffff00);
+                    cubes[coll].material.color.setHex(0x0000ff);
                 colore2.index = coll;
                 playOnce2 = false;
             }
@@ -1997,6 +1999,7 @@ var config = {
         //autoresize
         var s = setTimeout(res, 100);
         function res(){
+            console.log('resize')
             $('#autscl').click();
             $('#autscl').click();
         }
@@ -2243,12 +2246,12 @@ var config = {
         document.getElementById('aud').addEventListener('pause', function () {
             clearTimeout(count); // fermo le chiamate al controller
             console.log("Sheet end!");
-            if(i >= sheet.notes.length -1){
+            /*if(i >= sheet.notes.length -1){
                 newSleep = 0;
                 oldSleep = 0;
                 rightTime = 0;
                 i=0; // azzero il contatore per il vettore delle note
-            }
+            }*/
         });
 });
 })();

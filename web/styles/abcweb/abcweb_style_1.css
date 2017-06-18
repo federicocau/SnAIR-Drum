@@ -21,21 +21,23 @@ input[type=file]{
 }
 
 #fileLabel2{
-    margin-left: 85px;
+    margin-left: 84px;
     position: absolute ;
     margin-top: -25px;
 }
 
 #fknp{
-    margin-left: 3px;
+    margin-left: 4px;
 }
 
 
 ul        { margin: 0px; }
-label     { display: block; }
+label     { display: block; margin-right: 100px;}
+/*
 input     { vertical-align: middle; }
 input[type=checkbox] { margin-top: 7px; }
 input[type=number]   { width: 3.5em; }
+*/
 audio     { display: none; margin-right:5px; vertical-align:middle; z-index:1; position: relative; }
 #vid, #vidyub { display: none; margin-right:5px; vertical-align:middle; height:100%; z-index:1; position: relative; }
 
@@ -82,12 +84,12 @@ body { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -web
 
 /* div contenente il menù */
 #menu { 
-    background-color: #eee; 
+    /*background-color: #eee; */
     position: relative; 
     font-size:15px;
 }
 
-#menu label:hover, #sync_out label:hover { background: #aaa; }
+/*#menu label:hover, #sync_out label:hover { background: #aaa; }*/
 
 /* scritta menù */
 #mbar{
@@ -167,4 +169,8 @@ body { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -web
     position: absolute;
     border: 1px solid red;
 }
-
+/*
+#menu label{
+    visibility: visible;
+}
+*/
