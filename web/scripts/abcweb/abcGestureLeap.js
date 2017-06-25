@@ -2246,12 +2246,12 @@ var config = {
         document.getElementById('aud').addEventListener('pause', function () {
             clearTimeout(count); // fermo le chiamate al controller
             console.log("Sheet end!");
-            /*if(i >= sheet.notes.length -1){
+            //if(i >= sheet.notes.length -1){
                 newSleep = 0;
                 oldSleep = 0;
                 rightTime = 0;
                 i=0; // azzero il contatore per il vettore delle note
-            }*/
+            //}
         });
 });
 })();

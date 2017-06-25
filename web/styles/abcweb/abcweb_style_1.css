@@ -165,9 +165,11 @@ body { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -web
 
 /* titolo SnAIR Drum */
 #snairdrum{
-    margin-left: 20%; 
+    margin-left: 10%; 
+    margin-top: -5px;
     position: absolute;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
+    z-index: -1;
 }
 /*
 #menu label{
