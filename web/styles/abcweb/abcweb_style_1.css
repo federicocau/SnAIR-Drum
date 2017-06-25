@@ -138,7 +138,9 @@ body { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -web
 
 .btn-group{
     margin-left: 15%;
+    margin-top: 15%;
     width: 100%;
+    display: inline-block;
 }
 
 .dropdown-menu li{
@@ -164,12 +166,23 @@ body { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -web
 /* scena 3D */
 
 /* titolo SnAIR Drum */
+/*
 #snairdrum{
     margin-left: 10%; 
     margin-top: -5px;
     position: absolute;
-    /*border: 1px solid red;*/
     z-index: -1;
+}*/
+#snairdrum{
+    margin-left: -30%; 
+    margin-top: -5px;
+    position: absolute;
+    z-index: -1;
+    display: inline-block;
+}
+
+#aud{
+    margin-top: 1%;
 }
 /*
 #menu label{

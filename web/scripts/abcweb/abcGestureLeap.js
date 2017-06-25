@@ -1535,7 +1535,7 @@ var config = {
             {name: 'floortom', key: 'A2', dimension: [100.5, 110, 100.5], position: [125, -70, -35], rotation: [0, -0.13, 0], coda: codaStrum[5]},
             {name: 'hat', key: 'F#2', dimension: [100.5, 110, 100.5], position: [-120, -90, 75], rotation: [0, 0.13, 0], coda: codaStrum[6]},
             {name: 'snare', key: 'D2', dimension: [100.5, 110, 100.5], position: [0, -90, 65], rotation: [0, 0, 0], coda: codaStrum[7]},
-            {name: 'kick', key: 'B1', dimension: [100.5, 110, 100.5], position: [120, -90, 75], rotation: [0, -0.13, 0], coda: codaStrum[8]}
+            {name: 'kick', key: 'C2', dimension: [100.5, 110, 100.5], position: [120, -90, 75], rotation: [0, -0.13, 0], coda: codaStrum[8]} // C2 e B1
         ];
         
         // nomi strumenti
@@ -1846,8 +1846,6 @@ var config = {
 
         camera.aspect = $("#container").width() / $("#container").height();
         camera.updateProjectionMatrix();
-
-
         controls.handleResize();
 
         render();
@@ -2038,9 +2036,13 @@ var config = {
                         // creo la coda degli strumenti corretti: controllo che ogni strumento dello spartito 
                         // corrisponda a uno di quelli presenti nel vettore suoni[]
                         for (c = 0; c < nStrumenti; c++) {
+                            trovaStrumento:
                             for (l = 0; l < figures.length; l++) {
-                                if (sheet.notes[i + c].name === figures[l].key) // i+c perchè controllo prima la posizione iesima e poi la c+1+iesima
+                                //console.log(sheet.notes[i + c].name + " " + figures[l].key)
+                                if (sheet.notes[i + c].name === figures[l].key){ // i+c perchè controllo prima la posizione iesima e poi la c+1+iesima
                                     code.push({key: figures[l].key, name: figures[l].name, queue: figures[l].coda});
+                                    break trovaStrumento; // se trovo lo strumento non continuo con la ricerca
+                                }
                             }
                         }
 
@@ -2062,10 +2064,13 @@ var config = {
                             if (!code.contains(figures[c])) {
                                 codeErr.push({key: figures[c].key, name: figures[c].name, queue: figures[c].coda});
                             }
-                        /*for(u=0;u<code.length; u++)     
-                         console.log("Coda giusta " + code[u].name);
-                         for(u=0;u<codeErr.length; u++)     
-                         console.log("Coda errata: " + codeErr[u].name);*/
+                        
+                        /*
+                        for (u = 0; u < code.length; u++)
+                            console.log("Coda giusta " + code[u].name);
+                        console.log(" ");
+                        for (u = 0; u < codeErr.length; u++)
+                            console.log("Coda errata: " + codeErr[u].name);*/
 
                         // variabile per immagazzinare le coppie di code non vuote
                         var info = 0;
@@ -2077,8 +2082,10 @@ var config = {
                                 info++;
 
                         // se ho anche una sola coda vuota -> suoni non eseguiti -> esecuzione errata
-                        if (info !== nStrumenti - 1)
+                        if (info !== nStrumenti - 1){
                             console.log('%c una delle code è vuota', 'color: red');
+                            document.getElementById("sheetCheck").innerHTML = "Sbagliato";
+                        }
                         // allora ho tutte le code piene (contenenti un elemento)
                         else {
                             // controllo se altri strumenti sono stati suonati insieme a quello corretto
@@ -2120,10 +2127,12 @@ var config = {
                             // se le code errate erano vuote o il loro tempo era errato -> ho suonato solo gli strumenti giusti
                             if (corretto){
                                 console.log('%c right ', 'color: green');
-                                
+                                document.getElementById("sheetCheck").innerHTML = "Giusto";
                             }
-                            else
+                            else{
                                 console.log('%c altri strumenti errati suonati ', 'color: red');
+                                document.getElementById("sheetCheck").innerHTML = "Sbagliato";
+                            }
                         }
                         // se lo spartito non è ancora terminato sleep prende la differenza tra il suono corrente e il suono successivo
                         if (i + nStrumenti < sheet.notes.length - 1)
@@ -2153,7 +2162,8 @@ var config = {
                             console.log("click");
                         // altrimenti lo stampo
                         else
-                            console.log(q.name);
+                            console.log("hit: "+q.name);
+                                            
 
                         //console.log(q.coda.isEmpty() + " " + suoni[0].coda);
                         // se ho uno strumento singolo valido
