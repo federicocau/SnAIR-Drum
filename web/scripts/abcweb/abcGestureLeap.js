@@ -1556,9 +1556,9 @@ var config = {
             {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [-130, -50, -140], rotation: [0, 0.13, 0]},
             {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [0, -50, -150], rotation: [0, 0, 0]},
             {name: 'crash', key: 'D#3', dimension: [100.5, 110, 100.5], position: [130, -50, -140], rotation: [0, -0.13, 0]},
-            {name: 'tomOk', key: 'C3', dimension: [100.5, 110, 100.5], position: [-130, -70, -30], rotation: [0, 0.13, 0]},
-            {name: 'tomOk', key: 'B2', dimension: [100.5, 110, 100.5], position: [0, -70, -40], rotation: [0, 0, 0]},
-            {name: 'tomOk', key: 'A2', dimension: [100.5, 110, 100.5], position: [130, -70, -30], rotation: [0, -0.13, 0]},
+            {name: 'tom', key: 'C3', dimension: [100.5, 110, 100.5], position: [-130, -70, -30], rotation: [0, 0.13, 0]},
+            {name: 'tom', key: 'B2', dimension: [100.5, 110, 100.5], position: [0, -70, -40], rotation: [0, 0, 0]},
+            {name: 'tom', key: 'A2', dimension: [100.5, 110, 100.5], position: [130, -70, -30], rotation: [0, -0.13, 0]},
             {name: 'hat', key: 'F#2', dimension: [100.5, 110, 100.5], position: [-120, -90, 80], rotation: [0, 0.13, 0]},
             {name: 'snare', key: 'D2', dimension: [100.5, 110, 100.5], position: [0, -90, 70], rotation: [0, 0, 0]},
             {name: 'kick', key: 'B1', dimension: [100.5, 110, 100.5], position: [120, -90, 80], rotation: [0, -0.13, 0]}  
@@ -1676,6 +1676,7 @@ var config = {
         
  
  /* test collada loaders (brutto) */
+ 
             //crash1
             var loader = new THREE.ColladaLoader();
             loader.options.convertUpAxis = true;
