@@ -137,8 +137,8 @@ body { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -web
 }*/
 
 .btn-group{
-    margin-left: 15%;
-    margin-top: 15%;
+    margin-left: 14%;
+    margin-top: 14%;
     width: 100%;
     display: inline-block;
 }
@@ -158,28 +158,33 @@ body { -webkit-tap-highlight-color: transparent; -webkit-user-select: none; -web
 }
 
 #sheetCheck{
-    margin-left: 73%; 
+    margin-left: 71%; 
     margin-top: -20px;
     position: absolute;
-    border: 1px solid red;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px 5px 5px 5px;
+   /* border: 1px solid red;*/
 }
 /* scena 3D */
 
 /* titolo SnAIR Drum */
-/*
+
 #snairdrum{
     margin-left: 10%; 
     margin-top: -5px;
     position: absolute;
     z-index: -1;
-}*/
+}
+
+/*
 #snairdrum{
     margin-left: -30%; 
     margin-top: -5px;
-    position: absolute;
-    z-index: -1;
+    z-index: -3;
     display: inline-block;
-}
+}*/
 
 #aud{
     margin-top: 1%;
