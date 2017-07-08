@@ -1648,7 +1648,7 @@ var config = {
 
         controls.handleResize();
         // disabilita movimento camera
-        //controls.enabled = false;
+        controls.enabled = false;
 
         // world
 
