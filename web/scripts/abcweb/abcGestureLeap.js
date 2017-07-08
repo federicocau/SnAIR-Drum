@@ -9,7 +9,8 @@
 //~ "use strict";
 var msc_VERSION = 40;
 var play = false; // variabile per gestire il controller
-var delta = 0.5; // delta di approssimazione per la pressione dei tasti; best: 0.7
+var delta = 0.7; // delta di approssimazione per la pressione dei tasti; 
+//                  best: 0.7 (non precisa ma fixa la latenza); better 0.5 -> precisa ma problema latenza!
 
 
 
@@ -1904,7 +1905,8 @@ var config = {
                    if (elmed) {
                         // se l'utente suona quando il controller non è attivo -> esecuzione errata
                         if (elmed.currentTime > (rightTime + delta) && elmed.currentTime < (newSleep - delta)){
-                            console.log('%c controller in sleep', 'color: red');
+                            //*importante
+                            //console.log('%c controller in sleep', 'color: red');
                             document.getElementById("sheetCheck").innerHTML = "Errore";
                             document.getElementById("sheetCheck").className = "btn-danger";
                         }
@@ -1916,7 +1918,7 @@ var config = {
                         // chiamo la funzione di soundsjs
                         playSound(figures[coll].name);
                         // vedo che strumento è stato suonato
-                        console.log(figures[coll].name);
+                        //console.log(figures[coll].name); *importante
                     }
                 // se il box è uguale al colore di default
                 if (cubes[coll].material.color.getHex() === colore.color.getHex())
@@ -1947,7 +1949,8 @@ var config = {
                     if (elmed) {
                         // se l'utente suona quando il controller non è attivo -> esecuzione errata
                         if (elmed.currentTime > (rightTime + delta) && elmed.currentTime < (newSleep - delta)){
-                            console.log('%c controller in sleep', 'color: red');
+                            //*importante
+                            //console.log('%c controller in sleep', 'color: red');
                             document.getElementById("sheetCheck").innerHTML = "Errore";
                             document.getElementById("sheetCheck").className = "btn-danger";
                         }       
@@ -1958,8 +1961,8 @@ var config = {
                         pushCoda(coll, item);
                         // chiamo la funzione di soundsjs
                         playSound(figures[coll].name);
-                        // vedo che strumento è stato suonato
-                        console.log(figures[coll].name);
+                        // vedo che strumento è stato suonato *importante
+                        //console.log(figures[coll].name);
                     }
                 // cambio il colore on touch
                 if (cubes[coll].material.color.getHex() === colore2.color.getHex())
@@ -2033,7 +2036,9 @@ var config = {
                         }
                     }
 
-                    console.log("Strumenti suonati: " + nStrumenti);
+                    // *importante
+                    //console.log("Strumenti suonati: " + nStrumenti);
+                    
                     // se suono più di uno strumento in contemporanea
                     if (nStrumenti > 1) {
                         // creo la coda degli strumenti corretti: controllo che ogni strumento dello spartito 
@@ -2086,6 +2091,7 @@ var config = {
 
                         // se ho anche una sola coda vuota -> suoni non eseguiti -> esecuzione errata
                         if (info !== nStrumenti - 1){
+                            //*importante
                             console.log('%c una delle code è vuota', 'color: red');
                             document.getElementById("sheetCheck").innerHTML = "Errore";
                             document.getElementById("sheetCheck").className = "btn-danger";
@@ -2097,7 +2103,8 @@ var config = {
                             for (j = 0; j < nStrumenti - 1; j++) {
                                 var itemS = (code[j].queue).shift();
                                 var itemK = (code[j + 1].queue).shift();
-                                console.log(code[j].name + " + " + code[j + 1].name);
+                                // importante
+                                //console.log(code[j].name + " + " + code[j + 1].name);
                                 (code[j].queue).delete();
                                 console.log(itemS.time + ">=" + (deltaSx) + "; " + itemS.time + "<=" + (deltaDx));
                                 console.log(itemK.time + ">=" + (deltaSx) + "; " + itemK.time + "<=" + (deltaDx));
@@ -2130,11 +2137,13 @@ var config = {
                             (code[nStrumenti - 1].queue).delete();
                             // se le code errate erano vuote o il loro tempo era errato -> ho suonato solo gli strumenti giusti
                             if (corretto){
+                                //*importante 
                                 console.log('%c right ', 'color: green');
                                 document.getElementById("sheetCheck").innerHTML = "Giusto";
                                 document.getElementById("sheetCheck").className = "btn-success";
                             }
                             else{
+                                // *importante
                                 console.log('%c altri strumenti errati suonati ', 'color: red');
                                 document.getElementById("sheetCheck").innerHTML = "Errore";
                                 document.getElementById("sheetCheck").className = "btn-danger";
@@ -2163,12 +2172,13 @@ var config = {
                                 break searchInstrument; // se lo trovo esco
                             }
                         }
-                        // se lo strumento non è stato trovato nella lista allora è il click
-                        if (!q)
+                        // se lo strumento non è stato trovato nella lista allora è il click *importante
+                        
+                        /*if (!q)
                             console.log("click");
                         // altrimenti lo stampo
-                        else
-                            console.log("hit: "+q.name);
+                        else 
+                            console.log("hit: "+q.name);*/
                                             
 
                         //console.log(q.coda.isEmpty() + " " + suoni[0].coda);
@@ -2208,12 +2218,14 @@ var config = {
                                     }
                                     // se nessun altro strumento è stato suonato oltre quello corretto
                                     if (conta){
+                                        //*importante
                                         console.log('%c right ', 'color: green');
                                         document.getElementById("sheetCheck").innerHTML = "Giusto";
                                         document.getElementById("sheetCheck").className = "btn-success";
                                     }
                                     // altrimenti esecuzione errata
                                     else{
+                                        //*importante
                                         console.log('%c altri strumenti errati suonati ', 'color: red');
                                         document.getElementById("sheetCheck").innerHTML = "Errore";
                                         document.getElementById("sheetCheck").className = "btn-danger";
@@ -2221,6 +2233,7 @@ var config = {
                                 }
                                 // se lo strumento è stato suonato nella tempistica errata -> esecuzione errata
                                 else{
+                                    //*importante
                                     console.log('%c tempistica errata ', 'color: red');
                                     document.getElementById("sheetCheck").innerHTML = "Errore";
                                     document.getElementById("sheetCheck").className = "btn-danger";
@@ -2229,6 +2242,7 @@ var config = {
                             }
                             // se la coda dello strumento corretto è vuota (non è stato suonato) -> esecuzione errata
                             else{
+                                //*importante
                                 console.log('%c coda strumento vuota', 'color: red');
                                 document.getElementById("sheetCheck").innerHTML = "Errore";
                                 document.getElementById("sheetCheck").className = "btn-danger";
@@ -2250,7 +2264,8 @@ var config = {
                         i++;
                     }
                 }
-                console.log(i);
+                // importante
+               // console.log(i);
                 // se sforo il vettore metto uno sleep a caso -> da rivedere
                 //if (i >= sheet.notes.length - 1)
                 if (i > sheet.notes.length - 1) // nuovo if
