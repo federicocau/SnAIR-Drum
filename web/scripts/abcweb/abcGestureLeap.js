@@ -1551,29 +1551,28 @@ var config = {
             {text: 'snare', x: 82, y: 355},
             {text: 'kick', x: 105, y: 355}       
         ];
-        
+
         // strumenti
         var models = [
-            {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [-130, -50, -140], rotation: [0, 0.13, 0]},
-            {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [0, -50, -150], rotation: [0, 0, 0]},
-            {name: 'crash', key: 'D#3', dimension: [100.5, 110, 100.5], position: [130, -50, -140], rotation: [0, -0.13, 0]},
-            {name: 'tom', key: 'C3', dimension: [100.5, 110, 100.5], position: [-130, -70, -30], rotation: [0, 0.13, 0]},
-            {name: 'tom', key: 'B2', dimension: [100.5, 110, 100.5], position: [0, -70, -40], rotation: [0, 0, 0]},
-            {name: 'tom', key: 'A2', dimension: [100.5, 110, 100.5], position: [130, -70, -30], rotation: [0, -0.13, 0]},
-            {name: 'hat', key: 'F#2', dimension: [100.5, 110, 100.5], position: [-120, -90, 80], rotation: [0, 0.13, 0]},
-            {name: 'snare', key: 'D2', dimension: [100.5, 110, 100.5], position: [0, -90, 70], rotation: [0, 0, 0]},
-            {name: 'kick', key: 'B1', dimension: [100.5, 110, 100.5], position: [120, -90, 77], rotation: [0, -0.13, 0]}  
+            {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [-130, 0, -140], rotation: [0, 0.13, 0], scale: [5.7, 5.7, 5.7]},
+            {name: 'crash', key: 'C#3', dimension: [100.5, 110, 100.5], position: [0, 0, -150], rotation: [0, 0, 0], scale: [5.7, 5.7, 5.7]},
+            {name: 'crash', key: 'D#3', dimension: [100.5, 110, 100.5], position: [130, -0, -140], rotation: [0, -0.13, 0], scale: [6, 6, 6]},
+            {name: 'tom', key: 'C3', dimension: [100.5, 110, 100.5], position: [-130, -46, -30], rotation: [0, 0.13, 0], scale: [4.3, 4.3, 4.3]},
+            {name: 'tom', key: 'B2', dimension: [100.5, 110, 100.5], position: [0, -50, -40], rotation: [0, 0, 0], scale: [4.8, 4.8, 4.8]},
+            {name: 'tom', key: 'A2', dimension: [100.5, 110, 100.5], position: [130, -54, -30], rotation: [0, -0.13, 0], scale: [5.3, 5.3, 5.3]},
+            {name: 'hat', key: 'F#2', dimension: [100.5, 110, 100.5], position: [-120, -26, 80], rotation: [0, 0.13, 0], scale: [3, 3, 3]},
+            {name: 'snare', key: 'D2', dimension: [100.5, 110, 100.5], position: [0, -80, 70], rotation: [-0.2, 0, 0], scale: [5.4, 5.4, 5.4]},
+            {name: 'kick', key: 'B1', dimension: [100.5, 110, 100.5], position: [120, -70, 122], rotation: [29.755, 0, 0], scale: [3.7, 3.7, 3.7]}  
         ];
         
-
     init();
     animate();
     //ui();
     //user_test();
     //startTest();
 
-    // posizione delle dita -> dipPosition
-    controller = Leap.loop(function (frame) {
+        // posizione delle dita -> dipPosition
+   controllerL = Leap.loop(function (frame) {
         // se almeno una mano è visibile
         if (frame.hands.length > 0) {
             // prendo la posizione dell'estremità delle dita (un indice) -> sinistro
@@ -1594,6 +1593,7 @@ var config = {
             }
         }
     });
+
 
     Leap.loop({background: true}, {
         hand: function (hand) {
@@ -1675,8 +1675,32 @@ var config = {
         container = document.getElementById('container');
         container.appendChild(renderer.domElement);
         
+            // Load jeep model using the AssimpJSONLoader 
+            /*
+        var as = 0;
+        var t = setTimeout(loaderJs, 1000);
+        function loaderJs(){
+            if(as === 9)
+                clearTimeout(loadStr);   
+            
+            var loader1 = new THREE.AssimpJSONLoader();
+                loader1.load('models/' + models[as].name + '.json', function (object) {
+                    object.scale.set(models[as].scale[0], models[as].scale[1], models[as].scale[2]);
+                    console.log(as);
+                    object.position.set(models[as].position[0], models[as].position[1], models[as].position[2]);
+                    object.rotation.set(models[as].rotation[0], models[as].rotation[1], models[as].rotation[2]);
+                    scene.add(object);
+                    as++; 
+                    render();
+                });   
+            var loadStr = setTimeout(loaderJs, 300);       
+        }*/
+            
+
+            
  
  /* test collada loaders (brutto) */
+ /*
  
             //crash1
             var loader = new THREE.ColladaLoader();
@@ -1708,7 +1732,6 @@ var config = {
                 scene.add(object);
                 render();
             });  
-            /* problema */
             //tom1
                         var loader = new THREE.ColladaLoader();
             loader.options.convertUpAxis = true;
@@ -1773,7 +1796,7 @@ var config = {
                 scene.add(object);
                 render();
             });
-        
+        */
         for (k = 0; k < figures.length; k++) {
             
             // nomi kit
@@ -1892,6 +1915,11 @@ var config = {
                 figures[indice].coda.insert(item);
         }
         
+        function printErrors(error, color, controller, button) {
+           // console.log('%c '+error, 'color: '+color);
+            document.getElementById("sheetCheck").innerHTML = controller;
+            document.getElementById("sheetCheck").className = button;
+        }
         
     // collisione di una mano
     function collision(tip1) {
@@ -1906,9 +1934,11 @@ var config = {
                         // se l'utente suona quando il controller non è attivo -> esecuzione errata
                         if (elmed.currentTime > (rightTime + delta) && elmed.currentTime < (newSleep - delta)){
                             //*importante
-                            //console.log('%c controller in sleep', 'color: red');
+                            printErrors('controller in sleep', 'red', 'Errore', 'btn-danger');
+                            /*
+                            console.log('%c controller in sleep', 'color: red');
                             document.getElementById("sheetCheck").innerHTML = "Errore";
-                            document.getElementById("sheetCheck").className = "btn-danger";
+                            document.getElementById("sheetCheck").className = "btn-danger";*/
                         }
 
                         // creo l'item
@@ -1950,9 +1980,11 @@ var config = {
                         // se l'utente suona quando il controller non è attivo -> esecuzione errata
                         if (elmed.currentTime > (rightTime + delta) && elmed.currentTime < (newSleep - delta)){
                             //*importante
-                            //console.log('%c controller in sleep', 'color: red');
+                            printErrors('controller in sleep', 'red', 'Errore', 'btn-danger');
+                            /*
+                            console.log('%c controller in sleep', 'color: red');
                             document.getElementById("sheetCheck").innerHTML = "Errore";
-                            document.getElementById("sheetCheck").className = "btn-danger";
+                            document.getElementById("sheetCheck").className = "btn-danger";*/
                         }       
 
                         // creo l'item
@@ -2092,9 +2124,7 @@ var config = {
                         // se ho anche una sola coda vuota -> suoni non eseguiti -> esecuzione errata
                         if (info !== nStrumenti - 1){
                             //*importante
-                            console.log('%c una delle code è vuota', 'color: red');
-                            document.getElementById("sheetCheck").innerHTML = "Errore";
-                            document.getElementById("sheetCheck").className = "btn-danger";
+                            printErrors('una delle code è vuota', 'red', 'Errore', 'btn-danger');
                         }
                         // allora ho tutte le code piene (contenenti un elemento)
                         else {
@@ -2138,15 +2168,11 @@ var config = {
                             // se le code errate erano vuote o il loro tempo era errato -> ho suonato solo gli strumenti giusti
                             if (corretto){
                                 //*importante 
-                                console.log('%c right ', 'color: green');
-                                document.getElementById("sheetCheck").innerHTML = "Giusto";
-                                document.getElementById("sheetCheck").className = "btn-success";
+                                printErrors('right', 'green', 'Giusto', 'btn-success');
                             }
                             else{
                                 // *importante
-                                console.log('%c altri strumenti errati suonati ', 'color: red');
-                                document.getElementById("sheetCheck").innerHTML = "Errore";
-                                document.getElementById("sheetCheck").className = "btn-danger";
+                                printErrors('altri strumenti errati suonati', 'red', 'Errore', 'btn-danger');
                             }
                         }
                         // se lo spartito non è ancora terminato sleep prende la differenza tra il suono corrente e il suono successivo
@@ -2219,33 +2245,25 @@ var config = {
                                     // se nessun altro strumento è stato suonato oltre quello corretto
                                     if (conta){
                                         //*importante
-                                        console.log('%c right ', 'color: green');
-                                        document.getElementById("sheetCheck").innerHTML = "Giusto";
-                                        document.getElementById("sheetCheck").className = "btn-success";
+                                        printErrors('right', 'green', 'Giusto', 'btn-success');
                                     }
                                     // altrimenti esecuzione errata
                                     else{
                                         //*importante
-                                        console.log('%c altri strumenti errati suonati ', 'color: red');
-                                        document.getElementById("sheetCheck").innerHTML = "Errore";
-                                        document.getElementById("sheetCheck").className = "btn-danger";
+                                        printErrors('altri strumenti errati suonati', 'red', 'Errore', 'btn-danger');
                                     }
                                 }
                                 // se lo strumento è stato suonato nella tempistica errata -> esecuzione errata
                                 else{
                                     //*importante
-                                    console.log('%c tempistica errata ', 'color: red');
-                                    document.getElementById("sheetCheck").innerHTML = "Errore";
-                                    document.getElementById("sheetCheck").className = "btn-danger";
+                                    printErrors('tempistica errata', 'red', 'Errore', 'btn-danger');
                                 }
 
                             }
                             // se la coda dello strumento corretto è vuota (non è stato suonato) -> esecuzione errata
                             else{
                                 //*importante
-                                console.log('%c coda strumento vuota', 'color: red');
-                                document.getElementById("sheetCheck").innerHTML = "Errore";
-                                document.getElementById("sheetCheck").className = "btn-danger";
+                                printErrors('coda strumento vuota', 'red', 'Errore', 'btn-danger');
                             }
                         }
 
