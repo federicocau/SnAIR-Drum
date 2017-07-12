@@ -1695,108 +1695,31 @@ var config = {
                 });   
             var loadStr = setTimeout(loaderJs, 300);       
         }*/
-            
-
-            
- 
- /* test collada loaders (brutto) */
- /*
- 
-            //crash1
-            var loader = new THREE.ColladaLoader();
-            loader.options.convertUpAxis = true;
-            loader.load('models/' + models[0].name + '.DAE', function (collada) {
-                var object = collada.scene;
-                object.scale.set(5.7, 5.7, 5.7);
-                object.position.set(models[0].position[0], models[0].position[1] + 50, models[0].position[2]);
-                scene.add(object);
-                render();
-            });   
-            //crash2
-                        var loader = new THREE.ColladaLoader();
-            loader.options.convertUpAxis = true;
-            loader.load('models/' + models[1].name + '.DAE', function (collada) {
-                var object = collada.scene;
-                object.scale.set(5.7, 5.7, 5.7);
-                object.position.set(models[1].position[0], models[1].position[1] + 50, models[1].position[2]);
-                scene.add(object);
-                render();
-            });  
-            //ride
-                        var loader = new THREE.ColladaLoader();
-            loader.options.convertUpAxis = true;
-            loader.load('models/' + models[2].name + '.DAE', function (collada) {
-                var object = collada.scene;
-                object.scale.set(6, 6, 6);
-                object.position.set(models[2].position[0], models[2].position[1] + 50, models[2].position[2]);
-                scene.add(object);
-                render();
-            });  
-            //tom1
-                        var loader = new THREE.ColladaLoader();
-            loader.options.convertUpAxis = true;
-            loader.load('models/' + models[3].name + '.DAE', function (collada) {
-                var object = collada.scene;
-                object.scale.set(4.3, 4.3, 4.3);
-                object.position.set(models[3].position[0], models[3].position[1] + 24, models[3].position[2]);
-                scene.add(object);
-                render();
-            });
-            //tom2
-                        var loader = new THREE.ColladaLoader();
-            loader.options.convertUpAxis = true;
-            loader.load('models/' + models[4].name + '.DAE', function (collada) {
-                var object = collada.scene;
-                object.scale.set(4.8, 4.8, 4.8);
-                object.position.set(models[4].position[0], models[4].position[1] + 20, models[4].position[2]);
-                scene.add(object);
-                render();
-            });
-            //tom3
-                        var loader = new THREE.ColladaLoader();
-            loader.options.convertUpAxis = true;
-            loader.load('models/' + models[5].name + '.DAE', function (collada) {
-                var object = collada.scene;
-                object.scale.set(5.3, 5.3, 5.3);
-                object.position.set(models[5].position[0], models[5].position[1] + 16, models[5].position[2]);
-                scene.add(object);
-                render();
-            });
-            //hihat
-                        var loader = new THREE.ColladaLoader();
-            loader.options.convertUpAxis = true;
-            loader.load('models/' + models[6].name + '.DAE', function (collada) {
-                var object = collada.scene;
-                object.scale.set(3, 3, 3);
-                object.position.set(models[6].position[0], models[6].position[1] + 64, models[6].position[2]);
-                scene.add(object);
-                render();
-            });
-
-            //snare
-                        var loader = new THREE.ColladaLoader();
-            loader.options.convertUpAxis = true;
-            loader.load('models/' + models[7].name + '.DAE', function (collada) {
-                var object = collada.scene;
-                object.scale.set(5.4, 5.4, 5.4);
-                object.position.set(models[7].position[0], models[7].position[1] + 10, models[7].position[2]);
-                object.rotation.set(-0.2,0,0);
-                scene.add(object);
-                render();
-            });
-            
-            //kick
-                        var loader = new THREE.ColladaLoader();
-            loader.options.convertUpAxis = true;
-            loader.load('models/' + models[8].name + '.DAE', function (collada) {
-                var object = collada.scene;
-                object.scale.set(3.7, 3.7, 3.7);
-                object.position.set(models[8].position[0], models[8].position[1] + 20, models[8].position[2]+45);
-                object.rotation.set(29.755,0,0);
-                scene.add(object);
-                render();
-            });
-        */
+        
+            // creazione strumenti Collada
+            var as = 0;
+            var t = setTimeout(loaderJs, 1000);
+            function loaderJs() {
+                if (as >= 9)
+                    clearTimeout(loadStr);
+                else {
+                    var loader = new THREE.ColladaLoader();
+                    loader.options.convertUpAxis = true;
+                    loader.load('models/' + models[as].name + '.DAE', function (collada) {
+                        var object = collada.scene;
+                        object.scale.set(models[as].scale[0], models[as].scale[1], models[as].scale[2]);
+                        console.log(as);
+                        object.position.set(models[as].position[0], models[as].position[1], models[as].position[2]);
+                        object.rotation.set(models[as].rotation[0], models[as].rotation[1], models[as].rotation[2]);
+                        scene.add(object);
+                        as++;
+                        render();
+                    });
+                    var loadStr = setTimeout(loaderJs, 200);
+                }
+            } 
+        
+        // creazione cubi, scritte
         for (k = 0; k < figures.length; k++) {
             
             // nomi kit
@@ -1916,7 +1839,7 @@ var config = {
         }
         
         function printErrors(error, color, controller, button) {
-           // console.log('%c '+error, 'color: '+color);
+            //console.log('%c '+error, 'color: '+color);
             document.getElementById("sheetCheck").innerHTML = controller;
             document.getElementById("sheetCheck").className = button;
         }
