@@ -1677,26 +1677,28 @@ var config = {
         
             // Load jeep model using the AssimpJSONLoader 
             /*
-        var as = 0;
-        var t = setTimeout(loaderJs, 1000);
-        function loaderJs(){
-            if(as === 9)
-                clearTimeout(loadStr);   
-            
-            var loader1 = new THREE.AssimpJSONLoader();
-                loader1.load('models/' + models[as].name + '.json', function (object) {
-                    object.scale.set(models[as].scale[0], models[as].scale[1], models[as].scale[2]);
-                    console.log(as);
-                    object.position.set(models[as].position[0], models[as].position[1], models[as].position[2]);
-                    object.rotation.set(models[as].rotation[0], models[as].rotation[1], models[as].rotation[2]);
-                    scene.add(object);
-                    as++; 
-                    render();
-                });   
-            var loadStr = setTimeout(loaderJs, 300);       
-        }*/
+            var as = 0;
+            var t = setTimeout(loaderJs, 1000);
+            function loaderJs() {
+                if (as >= 9)
+                    clearTimeout(loadStr);
+                else {
+                    var loader1 = new THREE.AssimpJSONLoader();
+                    loader1.load('models/' + models[as].name + '.json', function (object) {
+                        object.scale.set(models[as].scale[0], models[as].scale[1], models[as].scale[2]);
+                        console.log(as);
+                        object.position.set(models[as].position[0], models[as].position[1], models[as].position[2]);
+                        object.rotation.set(models[as].rotation[0], models[as].rotation[1], models[as].rotation[2]);
+                        scene.add(object);
+                        as++;
+                        render();
+                    });
+                    var loadStr = setTimeout(loaderJs, 200);
+                }
+            }*/
         
             // creazione strumenti Collada
+            
             var as = 0;
             var t = setTimeout(loaderJs, 1000);
             function loaderJs() {
@@ -1839,7 +1841,7 @@ var config = {
         }
         
         function printErrors(error, color, controller, button) {
-            //console.log('%c '+error, 'color: '+color);
+            console.log('%c '+error, 'color: '+color);
             document.getElementById("sheetCheck").innerHTML = controller;
             document.getElementById("sheetCheck").className = button;
         }
